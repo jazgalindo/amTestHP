@@ -1,0 +1,12 @@
+.data-label {
+    color: $color-Oxford-Blue;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 400;
+    text-transform: capitalize;
+
+    strong {
+        font-weight: 600;
+        text-transform: none;
+    }
+}

@@ -1,0 +1,50 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    img{
+        height: 66px;
+        width: 193.8px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 25px;
+        margin:2rem;
+        @include mobile {
+            font-size: 26px;
+        }
+    
+        @include desktop {
+            font-size: 36px;
+        }
+    }
+
+    &__actions{
+        display: flex;
+        justify-content: space-between;
+        
+
+        @include mobile {
+            flex-direction: column;
+            gap: .5rem;
+        }
+    
+        @include desktop {
+            flex-direction: row;
+            gap: 3rem;
+        }
+    
+    }
+}
