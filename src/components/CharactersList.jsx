@@ -18,6 +18,7 @@ const CharactersList = ({ characters }) => {
               gender={character.gender}
               eyeColour={character.eyeColour}
               hairColour={character.hairColour}
+              favorite={character.favorite}
             />
           )
         })}

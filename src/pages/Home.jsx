@@ -2,14 +2,18 @@ import { Fragment, useEffect, useState } from 'react'
 import { getCharacters, getFilters } from '../api/harryPotterApi'
 import CharactersList from '../components/CharactersList'
 import { setCharacters, setFilters, setLoading } from '../actions'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import assets from '../assets/assets'
 import Loader from '../components/Loader'
 
 function HomePage() {
-  const characters = useSelector((state) => state.characters)
-  const loading = useSelector((state) => state.loading)
-  const filters = useSelector((state) => state.filters)
+  const characters = useSelector((state) =>
+    state.getIn(['data', 'characters'], shallowEqual)
+  ).toJS()
+  const loading = useSelector((state) => state.getIn(['ui', 'loading']))
+  const filters = useSelector((state) =>
+    state.getIn(['data', 'filters'], shallowEqual)
+  ).toJS()
   const [currentFilter, setCurrentFilter] = useState('')
   const dispatch = useDispatch()
 
@@ -67,7 +71,7 @@ function HomePage() {
         </div>
         <div>
           {loading ? (
-           <Loader show={true}/>
+            <Loader show={true} />
           ) : (
             <CharactersList characters={characters} />
           )}

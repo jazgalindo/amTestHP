@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.scss'
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux'
-import { charactersReducer } from './reducers/characters'
 import { Provider } from 'react-redux'
 import { logger } from './middlewares'
+import rootReducer from './reducers/rootReducer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -14,7 +14,7 @@ applyMiddleware(logger)
 )
 
 const store = createStore(
-  charactersReducer,
+  rootReducer,
   composedEnhancers
 )
 
