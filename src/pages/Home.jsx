@@ -48,7 +48,7 @@ function HomePage() {
       <header></header>
       <main>
         <img className='logo' src={assets.icons.logo} alt='Harry potter logo' />
-        <section className='filters'>
+        <div className='filters'>
           <p className='filters__title'>Selecciona tu filtro</p>
           <div className='filters__actions'>
             {filters &&
@@ -64,14 +64,14 @@ function HomePage() {
                 </button>
               ))}
           </div>
-        </section>
-        <section>
+        </div>
+        <div>
           {loading ? (
            <Loader show={true}/>
           ) : (
             <CharactersList characters={characters} />
           )}
-        </section>
+        </div>
       </main>
     </Fragment>
   )

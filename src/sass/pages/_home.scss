@@ -21,7 +21,8 @@ main {
         font-weight: 700;
         font-size: 36px;
         line-height: 25px;
-        margin:2rem;
+        text-align: center;
+
         @include mobile {
             font-size: 26px;
         }
@@ -32,16 +33,15 @@ main {
     }
 
     &__actions{
-        display: flex;
-        justify-content: space-between;
-        
-
         @include mobile {
-            flex-direction: column;
-            gap: .5rem;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 1rem;
         }
     
         @include desktop {
+            display: flex;
+            justify-content: space-between;
             flex-direction: row;
             gap: 3rem;
         }
