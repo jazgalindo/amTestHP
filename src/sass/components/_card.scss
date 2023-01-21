@@ -2,13 +2,12 @@
     background-color: $color-white;
     color:$color-Black-Pearl;
     display: flex;
-    
     gap: 1rem;
 
     @include mobile {
         flex-direction: column;
+        justify-content: space-between;
         border-radius: 5px;
-
     }
 
     @include desktop {
@@ -74,15 +73,17 @@
     &__name {
         font-style: normal;
         font-weight: 600;
-        line-height: 46px;
+        
         color: $color-Black-Pearl;
 
         @include mobile {
+            line-height: 20px;
             font-size: 18px;
             text-align: center;
         }
 
         @include desktop {
+            line-height: 46px;
             font-size: 30px;
         }
     }

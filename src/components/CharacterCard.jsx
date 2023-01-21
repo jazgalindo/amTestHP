@@ -3,28 +3,37 @@ import CharacterInformation from './CharacterInformation'
 
 const CharacterCard = ({
   name,
+  house,
   alive,
   image,
-  student,
+  hogwartsStudent,
+  hogwartsStaff,
   dateOfBirth,
   gender,
   eyeColour,
   hairColour,
 }) => {
+  const details = (
+    <CharacterDetails
+      alive={alive}
+      hogwartsStudent={hogwartsStudent}
+      hogwartsStaff={hogwartsStaff}
+    />
+  )
+
   return (
     <div className='card'>
-      <figure className='card__photo card__photo--Gryffindor'>
+      <figure className={`card__photo card__photo--${house}`}>
         <img className='card__photo__image' src={image} alt='Icono favorito' />
       </figure>
-      <div className='card__body'>
-        <div className='show-only-desktop'>
-          <CharacterDetails cla alive={alive} student={student} />
-        </div>
+      <div className='show-only-mobile'>
         <p className='card__name'>{name}</p>
-        <div className='show-only-mobile'>
-          <CharacterDetails cla alive={alive} student={student} />
-        </div>
+      </div>
+      <div className='card__body'>
+        <div className='show-only-mobile'>{details}</div>
         <div className='show-only-desktop'>
+          {details}
+          <p className='card__name'>{name}</p>
           <CharacterInformation
             dateOfBirth={dateOfBirth}
             gender={gender}

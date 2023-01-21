@@ -27,7 +27,7 @@
         background: getBackgroundGradient($color-Supernova,$color-Dolly );
     }@else if $house == $house-Ravenclaw{
         background: getBackgroundGradient($color-Bondi-Blue,$color-Malibu );
-    }@else if $house == $house-Hufflepuff{
+    }@else if $house == $house-Slytherin{
         background: getBackgroundGradient($color-Forest-Green,$color-Conifer );
     }  
 }

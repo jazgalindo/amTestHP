@@ -1,6 +1,6 @@
 const assets = {
   images: {
-      Background:'src/assets/images/Background.png',
+    Background: 'src/assets/images/Background.png',
   },
   icons: {
     logo: 'src/assets/icons/logo.svg',
@@ -8,4 +8,4 @@ const assets = {
   },
 }
 
-export default assets;
+export default assets
