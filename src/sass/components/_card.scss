@@ -1,0 +1,99 @@
+.card {
+    background-color: $color-white;
+    color:$color-Black-Pearl;
+    display: flex;
+    
+    gap: 1rem;
+
+    @include mobile {
+        flex-direction: column;
+        border-radius: 5px;
+
+    }
+
+    @include desktop {
+        flex-direction: row;
+        border-radius: 16px;
+    }
+
+
+    &__photo {
+        margin: 0px;
+        @include align-center;
+
+        @include mobile {
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        @include desktop {
+            border-radius: 16px 0px 0px 16px;
+        }
+
+        &--Gryffindor {
+            @include background-Hogwarts-House($house-Gryffindor);
+        }
+
+        &--Hufflepuff {
+            @include background-Hogwarts-House($house-Hufflepuff);
+        }
+
+        &--Ravenclaw {
+            @include background-Hogwarts-House($house-Ravenclaw);
+        }
+
+        &--Slytherin {
+            @include background-Hogwarts-House($house-Slytherin);
+        }
+
+        &__image {
+            display: inline-block;
+            position: relative;
+            margin: 10px;
+
+            @include mobile {
+                width: 100px;
+                height: 100px;
+            }
+
+            @include desktop {
+                width: 150px;
+                height: 150px;
+            }
+
+            overflow: hidden;
+            border-radius: 50%;
+
+            img {
+                width: auto;
+                height: 100%;
+                margin-left: -50px;
+            }
+        }
+    }
+
+    &__name {
+        font-style: normal;
+        font-weight: 600;
+        line-height: 46px;
+        color: $color-Black-Pearl;
+
+        @include mobile {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        @include desktop {
+            font-size: 30px;
+        }
+    }
+
+    &__body{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @include desktop {
+            width: 100%;
+        }
+    }
+}

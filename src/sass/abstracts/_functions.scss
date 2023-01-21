@@ -1,0 +1,3 @@
+@function getBackgroundGradient($primaryColor, $secondaryColor){
+    @return linear-gradient(135deg, $primaryColor 0%, $secondaryColor 100%);
+  }

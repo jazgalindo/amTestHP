@@ -1,18 +1,24 @@
 import { Fragment } from 'react'
 import './App.scss'
+import CharacterCard from './components/CharacterCard'
 
 function App() {
   return (
     <Fragment>
-      <header>
-        <h1>Header</h1>
-      </header>
+      <header></header>
       <main>
+        <section></section>
         <section>
-          Buttons
-        </section>
-        <section>
-          Character list
+          <CharacterCard
+            name='Jazmin Galindo'
+            alive={true}
+            image='http://hp-api.herokuapp.com/images/harry.jpg'
+            student={true}
+            dateOfBirth={"31-07-1980"}
+            gender={"male"}
+            eyeColour={"green"}
+            hairColour={"black"}
+          />
         </section>
       </main>
     </Fragment>
