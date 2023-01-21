@@ -4,6 +4,14 @@
     display: flex;
     gap: 1rem;
 
+    &--alive{
+        @include backgroundCardAlive(true)
+    }
+
+    &--dead{
+        @include backgroundCardAlive(false)
+    }
+
     @include mobile {
         flex-direction: column;
         justify-content: space-between;

@@ -22,7 +22,7 @@ const CharacterCard = ({
   )
 
   return (
-    <div className='card'>
+    <div className={`card  card--${alive ? 'alive' : 'dead'}`}>
       <figure className={`card__photo card__photo--${house}`}>
         <img className='card__photo__image' src={image} alt='Icono favorito' />
       </figure>

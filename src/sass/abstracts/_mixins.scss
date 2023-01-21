@@ -1,9 +1,5 @@
-
-
-
-
 @mixin mobile {
-    @media screen and (max-width: 567px){
+    @media screen and (max-width: 567px) {
         @content
     }
 }
@@ -14,20 +10,35 @@
     }
 }
 
-@mixin align-center{
+@mixin align-center {
     align-items: center;
     justify-content: center;
     display: flex
 }
 
-@mixin background-Hogwarts-House($house){
-    @if $house == $house-Gryffindor{
-        background: getBackgroundGradient($color-Red,$color-Gradis );
-    }@else if $house == $house-Hufflepuff{
-        background: getBackgroundGradient($color-Supernova,$color-Dolly );
-    }@else if $house == $house-Ravenclaw{
-        background: getBackgroundGradient($color-Bondi-Blue,$color-Malibu );
-    }@else if $house == $house-Slytherin{
-        background: getBackgroundGradient($color-Forest-Green,$color-Conifer );
-    }  
+@mixin background-Hogwarts-House($house) {
+    @if $house==$house-Gryffindor {
+        background: getBackgroundGradient($color-Red, $color-Gradis);
+    }
+
+    @else if $house==$house-Hufflepuff {
+        background: getBackgroundGradient($color-Supernova, $color-Dolly);
+    }
+
+    @else if $house==$house-Ravenclaw {
+        background: getBackgroundGradient($color-Bondi-Blue, $color-Malibu);
+    }
+
+    @else if $house==$house-Slytherin {
+        background: getBackgroundGradient($color-Forest-Green, $color-Conifer);
+    }
+}
+
+@mixin backgroundCardAlive($alive) {
+    @if $alive==true {
+        background-color: $color-white;
+    }
+    @else {
+        background-color: $color-Silver;
+    }
 }
