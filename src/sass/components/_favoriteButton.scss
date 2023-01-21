@@ -1,0 +1,21 @@
+.favorite {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+
+    svg {
+        fill: none;
+
+        &:hover {
+            fill: $color-Dusty-Gray;
+        }
+    }
+
+    &--true {
+        svg {
+            fill: $color-Black;
+        }
+    }
+
+}
