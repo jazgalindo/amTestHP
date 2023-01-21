@@ -1,0 +1,36 @@
+
+body {
+    font-family: $font-Lato;
+    font-family: $font-OpenSans;
+    background-color: #000000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.show-only-mobile{
+    @include desktop {
+        display: none;
+    }
+}
+
+.show-only-desktop{
+    @include mobile {
+        display: none;
+    }
+}
+
+.data-label{
+    color: $color-Oxford-Blue;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 400;
+    text-transform: capitalize;
+    strong{
+        font-weight:600 ;
+        text-transform: none;
+    }
+}
+

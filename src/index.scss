@@ -1,0 +1,14 @@
+//abstracs
+@import './sass/abstracts/variables.scss';
+@import './sass/abstracts/mixins.scss';
+@import './sass/abstracts/functions.scss';
+
+//base
+@import './sass/base/base.scss';
+@import './sass/base/resets.scss';
+
+//components
+@import './sass/components/card.scss';
+@import './sass/components/characterDetails.scss';
+@import './sass/components/characterInformation.scss';
+@import './sass/components/charactersList';
