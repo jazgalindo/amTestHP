@@ -4,6 +4,7 @@ import CharactersList from '../components/CharactersList'
 import assets from '../assets/assets'
 import Loader from '../components/Loader'
 import { fetchCharacters, fetchCharacterTypes } from '../slices/dataSlice'
+import Menu from '../components/Menu'
 
 function HomePage() {
   const dispatch = useDispatch()
@@ -34,7 +35,7 @@ function HomePage() {
 
   return (
     <Fragment>
-      <header></header>
+      <Menu/>
       <main>
         <img className='logo' src={assets.icons.logo} alt='Harry potter logo' />
         <div className='filters'>
