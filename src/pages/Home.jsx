@@ -1,47 +1,32 @@
 import { Fragment, useEffect, useState } from 'react'
-import { getCharacters, getFilters } from '../api/harryPotterApi'
-import CharactersList from '../components/CharactersList'
-import { setCharacters, setFilters, setLoading } from '../actions'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import CharactersList from '../components/CharactersList'
 import assets from '../assets/assets'
 import Loader from '../components/Loader'
+import { fetchCharacters, fetchCharacterTypes } from '../slices/dataSlice'
 
 function HomePage() {
-  const characters = useSelector((state) =>
-    state.getIn(['data', 'characters'], shallowEqual)
-  ).toJS()
-  const loading = useSelector((state) => state.getIn(['ui', 'loading']))
-  const filters = useSelector((state) =>
-    state.getIn(['data', 'filters'], shallowEqual)
-  ).toJS()
-  const [currentFilter, setCurrentFilter] = useState('')
   const dispatch = useDispatch()
-
-  const fetchCharacters = async (filter) => {
-    dispatch(setLoading(true))
-    const charactersResponse = await getCharacters(filter)
-    dispatch(setCharacters(charactersResponse))
-    dispatch(setLoading(false))
-  }
-
-  const fetchFilters = async () => {
-    dispatch(setLoading(true))
-    const filtersResponse = await getFilters()
-    dispatch(setFilters(filtersResponse))
-    dispatch(setLoading(false))
-  }
+  const characters = useSelector((state) => state.data.characters, shallowEqual)
+  const loading = useSelector((state) => state.ui.loading)
+  const filters = useSelector(
+    (state) => state.data.characterTypes,
+    shallowEqual
+  )
+  const [currentFilter, setCurrentFilter] = useState('')
 
   useEffect(() => {
-    fetchCharacters()
-    fetchFilters()
+    dispatch(fetchCharacters())
+    dispatch(fetchCharacterTypes())
   }, [])
 
   const handleClickButtonFilter = (filter) => {
     setCurrentFilter((currentFilter) => {
       if (currentFilter === filter) {
-        fetchCharacters()
+        dispatch(fetchCharacters())
+        setCurrentFilter('')
       } else {
-        fetchCharacters(filter)
+        dispatch(fetchCharacters(filter))
         setCurrentFilter(filter)
       }
     })

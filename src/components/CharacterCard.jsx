@@ -1,5 +1,7 @@
-import { useDispatch } from 'react-redux'
-import { setFavorite } from '../actions'
+import { useAlert } from 'react-alert'
+import { useDispatch, useSelector } from 'react-redux'
+import { setFavorite } from '../slices/dataSlice'
+import { MAX_FAVORITES } from '../utils/constans'
 import CharacterDetails from './CharacterDetails'
 import CharacterInformation from './CharacterInformation'
 
@@ -14,13 +16,24 @@ const CharacterCard = ({
   gender,
   eyeColour,
   hairColour,
-  favorite
+  favorite,
 }) => {
   const nameLabel = `${!alive ? '+ ' : ''}${name}`
-  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.data.favorites)
+  const dispatch = useDispatch()
+  const alert = useAlert()
 
-  const handleClickFavorite = ()=>{
-    dispatch(setFavorite({name}))
+  const handleClickFavorite = () => {
+    const currentExistInFavorites = favorites.find(
+      (character) => character.name === name
+    )
+    if (favorites.length === MAX_FAVORITES && !currentExistInFavorites) {
+      alert.error(
+        'Ups, no puedes agregar mas favoritos. Elimina uno para liberar espacio.'
+      )
+    } else {
+      dispatch(setFavorite({ name }))
+    }
   }
 
   return (
