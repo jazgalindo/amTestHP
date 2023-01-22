@@ -1,7 +1,7 @@
 import React from 'react'
-import FavoriteIcon from './FavoriteIcon'
+import FavoriteButton from './FavoriteButton'
 
-const CharacterDetails = ({ alive, hogwartsStudent,hogwartsStaff }) => {
+const CharacterDetails = ({ alive, hogwartsStudent,hogwartsStaff,handleClickFavorite,favorite }) => {
   return (
     <div className='character-details'>
       <section className='character-details__data'>
@@ -10,9 +10,7 @@ const CharacterDetails = ({ alive, hogwartsStudent,hogwartsStaff }) => {
         <p>{hogwartsStudent ? 'ESTUDIANTE' : ''}</p>
         <p>{hogwartsStaff ? 'STAFF' : ''}</p>
       </section>
-      <button type='submit' className='character-details__fav'>
-      <FavoriteIcon />
-      </button>
+      <FavoriteButton isFavorite={favorite} onClick={handleClickFavorite}/>
     </div>
   )
 }
