@@ -11,7 +11,6 @@ const initialState = {
 export const fetchCharacters = createAsyncThunk(
   'data/fetchCharacters',
   async (filter, { dispatch }) => {
-    console.log('filter', filter)
     dispatch(setLoading(true))
     const charactersResponse = await getCharacters(filter)
     dispatch(setCharacters(charactersResponse))
