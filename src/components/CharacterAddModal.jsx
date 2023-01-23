@@ -42,7 +42,7 @@ const CharacterAddModal = ({ showModal, closeModal }) => {
         onClickClose={closeModal}
         title='Agregar un personaje'
       >
-        <form onSubmit={handleClickSave}>
+        <form >
           <div className='row'>
             <Input
               label='Nombre:'
@@ -120,7 +120,7 @@ const CharacterAddModal = ({ showModal, closeModal }) => {
             </div>
           </div>
           <div className='row'>
-            <button type='submit' className='button'>
+            <button onClick={handleClickSave} className='button'>
               Guardar
             </button>
           </div>
