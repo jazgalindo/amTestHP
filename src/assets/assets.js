@@ -2,7 +2,7 @@
 
 const assets = {
   images: {
-    Background: require('../assets/images/Background.png'),
+    Background: import('../assets/images/Background.png'),
     user: 'src/assets/images/user.png',
   },
   icons: {
