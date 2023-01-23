@@ -1,6 +1,6 @@
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import assets from '../assets/assets'
+import userImage from '../assets/images/user.png'
 import { setFavorite } from '../slices/dataSlice'
 import { MAX_FAVORITES } from '../utils/constans'
 import CharacterDetails from './CharacterDetails'
@@ -40,7 +40,7 @@ const CharacterCard = ({
   return (
     <div className={`card  card--${alive ? 'alive' : 'dead'}`}>
       <figure className={`card__photo card__photo--${house}`}>
-        <img className='card__photo__image' src={image|| assets.images.user} alt='Icono favorito' />
+        <img className='card__photo__image' src={image|| userImage} alt='Icono favorito' />
       </figure>
       <div className='show-only-mobile'>
         <p className='card__name'>{nameLabel}</p>

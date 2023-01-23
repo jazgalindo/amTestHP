@@ -5,12 +5,31 @@ main {
     align-items: center;
 }
 
+.logo{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .filters {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     align-items: center;
-    gap: 4rem;
+    padding-top: 3rem;
+
+    @include mobile {
+        gap: .5rem;
+        width: 100%;
+    }
+
+    @include desktop {
+        gap: 4rem;
+    }
+
+    &__filter{
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
 
     img{
         height: 66px;
@@ -30,21 +49,5 @@ main {
         @include desktop {
             font-size: 36px;
         }
-    }
-
-    &__actions{
-        @include mobile {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 1rem;
-        }
-    
-        @include desktop {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            gap: 3rem;
-        }
-    
     }
 }

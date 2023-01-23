@@ -1,4 +1,4 @@
-import assets from '../assets/assets'
+import closeIcon from '../assets/icons/close.svg'
 
 const Modal = ({ showModal, onClickClose, title, children }) => {
   return (
@@ -8,7 +8,7 @@ const Modal = ({ showModal, onClickClose, title, children }) => {
           <div className='modal__title'>
             <p>{title}</p>
             <button className='modal__close' onClick={onClickClose}>
-              <img src={assets.icons.close} />
+              <img src={closeIcon} />
             </button>
           </div>
           <div className='modal__body'>{children}</div>
