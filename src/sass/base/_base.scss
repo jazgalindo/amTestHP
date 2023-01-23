@@ -96,6 +96,14 @@ body {
     }
 }
 
-.display{
-    display: block !important;
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.col{
+    width: 100%;
 }
