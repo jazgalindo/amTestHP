@@ -1,6 +1,8 @@
+/* eslint-disable global-require */
+
 const assets = {
   images: {
-    Background: 'src/assets/images/Background.png',
+    Background: require('../assets/images/Background.png'),
     user: 'src/assets/images/user.png',
   },
   icons: {
