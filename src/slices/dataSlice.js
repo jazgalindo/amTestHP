@@ -67,7 +67,7 @@ export const dataSlice = createSlice({
       const { name, value } = action.payload
       if (name === 'position') {
         let isStudent = value === 'student' ? true : false
-        console.log("isStudent",isStudent)
+        console.log('isStudent', isStudent)
         state.character.hogwartsStaff = !isStudent
         state.character.hogwartsStudent = isStudent
       } else {
@@ -99,5 +99,6 @@ export const {
   setFavorite,
   setCharacter,
   clearCharacter,
+  addCharacter
 } = dataSlice.actions
 export const dataReducer = dataSlice.reducer

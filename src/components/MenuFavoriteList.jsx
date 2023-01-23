@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import MenuItemIconAction from '../components/MenuItemIconAction'
+import MenuItemIconAction from './MenuItemIconAction'
 import { setFavorite } from '../slices/dataSlice'
 import iconTrash from '../assets/icons/trash.svg'
 

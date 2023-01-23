@@ -1,10 +1,10 @@
 import { Fragment, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import MenuFavoriteList from '../containers/MenuFavoriteList'
 import { clearCharacter } from '../slices/dataSlice'
 import CharacterAddModal from './CharacterAddModal'
 import iconAddCharacter from '../assets/icons/peopleAdd.svg'
 import iconFavorite from '../assets/icons/favorite.svg'
+import MenuFavoriteList from './MenuFavoriteList'
 
 
 const Menu = () => {
