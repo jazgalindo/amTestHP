@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
-import assets from '../assets/assets'
-import MenuItemIconAction from '../components/MenuItemIconAction'
+import MenuItemIconAction from './MenuItemIconAction'
 import { setFavorite } from '../slices/dataSlice'
+import iconTrash from '../assets/icons/trash.svg'
 
 const MenuFavoriteList = () => {
   const favorites = useSelector((state) => state.data.favorites)
@@ -21,7 +21,7 @@ const MenuFavoriteList = () => {
               label={character.name}
               image={character.image}
               onClickAction={() => onClickDeleteFavorite(character.name)}
-              iconAction={assets.icons.trash}
+              iconAction={iconTrash}
             />
           )
         })}

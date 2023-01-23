@@ -1,9 +1,11 @@
 import { Fragment, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import assets from '../assets/assets'
-import MenuFavoriteList from '../containers/MenuFavoriteList'
 import { clearCharacter } from '../slices/dataSlice'
 import CharacterAddModal from './CharacterAddModal'
+import iconAddCharacter from '../assets/icons/peopleAdd.svg'
+import iconFavorite from '../assets/icons/favorite.svg'
+import MenuFavoriteList from './MenuFavoriteList'
+
 
 const Menu = () => {
   const [showCharacterAddModal, setShowCharacterAddModal] = useState(false)
@@ -27,7 +29,7 @@ const Menu = () => {
             Favoritos
             <img
               className='icon'
-              src={assets.icons.favorite}
+              src={iconFavorite}
               alt='Favorite icon'
             />
             <MenuFavoriteList />
@@ -40,7 +42,7 @@ const Menu = () => {
             Agregar{' '}
             <img
               className='icon'
-              src={assets.icons.peopleAdd}
+              src={iconAddCharacter}
               alt='People add icon'
             />
           </li>

@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import CharactersList from '../components/CharactersList'
-import assets from '../assets/assets'
+import logo from '../assets/icons/logo.svg'
 import Loader from '../components/Loader'
 import { fetchCharacters, fetchCharacterTypes } from '../slices/dataSlice'
 import Menu from '../components/Menu'
@@ -37,14 +37,13 @@ function HomePage() {
     <Fragment>
       <Menu />
       <main>
-        <img className='logo' src={assets.icons.logo} alt='Harry potter logo' />
+        <img className='logo' src={logo} alt='Harry potter logo' />
+        <p className='filters__title'>Selecciona tu filtro</p>
         <div className='filters'>
-          <p className='filters__title'>Selecciona tu filtro</p>
-          <div className='filters__actions'>
-            {filters &&
-              filters.map((filter) => (
+          {filters &&
+            filters.map((filter) => (
+              <div className='filters__filter' key={filter.key}>
                 <button
-                  key={filter.key}
                   className={`button ${
                     currentFilter === filter.key ? 'button--active' : ''
                   }`}
@@ -52,8 +51,8 @@ function HomePage() {
                 >
                   {filter.label}
                 </button>
-              ))}
-          </div>
+              </div>
+            ))}
         </div>
         <div>
           <Loader show={loading} />
