@@ -14,6 +14,7 @@ Intrucciones para levantar el proyecto seguirlas en el siguiente orden:
 
 
 • Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?
+    - Integrar pruebas
     - Integrar una libreria de traducciones para tener consistencia en el idioma de los datos.
     - Mejorar la experiencia de usando usando algun dropdown en los colores de ojos y cabello, esto ayudara a que tengamos datos coherentes en nuestra bd, ya que al permitir que el usuario escriba esa clase de informacion puede desatar incoherencia en la base de datos al tener errores ortograficos por ejemplo.
     - Agregar lazy loading en la pagina para mejorar la experiencia de usuario.
