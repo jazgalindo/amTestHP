@@ -1,5 +1,5 @@
 const Loader = ({ show }) => {
-  return <span className='loader'></span>
+  return show ? <span className='loader'></span> :''
 }
 
 export default Loader

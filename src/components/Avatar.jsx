@@ -1,8 +1,8 @@
 const Avatar = ({ src }) => {
   return (
-    <figure className='avatar'>
+    <div className='avatar'>
       <img className='avatar__image' src={src} />
-    </figure>
+    </div>
   )
 }
 
