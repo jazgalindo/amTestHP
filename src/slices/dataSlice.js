@@ -6,6 +6,16 @@ const initialState = {
   characters: [],
   favorites: [],
   characterTypes: [],
+  character: {
+    name: '',
+    dateOfBirth: '',
+    gender: 'male',
+    eyeColour: '',
+    hairColour: '',
+    hogwartsStudent: false,
+    hogwartsStaff: true,
+    image: '',
+  },
 }
 
 export const fetchCharacters = createAsyncThunk(
@@ -26,6 +36,16 @@ export const fetchCharacterTypes = createAsyncThunk(
   }
 )
 
+export const postCharacter = createAsyncThunk(
+  'data/postCharacter',
+  async (character, { dispatch }) => {
+    dispatch(setLoading(true))
+    const characterResponse = await postCharacter(character)
+    dispatch(addCharacter(characterResponse))
+    dispatch(setLoading(false))
+  }
+)
+
 export const dataSlice = createSlice({
   name: 'data',
   initialState,
@@ -34,8 +54,25 @@ export const dataSlice = createSlice({
       state.characters = action.payload
       state.favorites = []
     },
+    addCharacter: (state, action) => {
+      state.characters.push(action.payload)
+    },
+    clearCharacter: (state) => {
+      state.character = initialState.character
+    },
     setCharacterTypes: (state, action) => {
       state.characterTypes = action.payload
+    },
+    setCharacter: (state, action) => {
+      const { name, value } = action.payload
+      if (name === 'position') {
+        let isStudent = value === 'student' ? true : false
+        console.log("isStudent",isStudent)
+        state.character.hogwartsStaff = !isStudent
+        state.character.hogwartsStudent = isStudent
+      } else {
+        state.character[name] = value
+      }
     },
     setFavorite: (state, action) => {
       const currentCharacterIndex = state.characters.findIndex((character) => {
@@ -56,6 +93,11 @@ export const dataSlice = createSlice({
   },
 })
 
-export const { setCharacters, setCharacterTypes, setFavorite } =
-  dataSlice.actions
+export const {
+  setCharacters,
+  setCharacterTypes,
+  setFavorite,
+  setCharacter,
+  clearCharacter,
+} = dataSlice.actions
 export const dataReducer = dataSlice.reducer

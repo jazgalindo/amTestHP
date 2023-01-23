@@ -17,6 +17,7 @@ const MenuFavoriteList = () => {
         favorites.map((character) => {
           return (
             <MenuItemIconAction
+              key={`MenuItemIconAction-${character.name}`}
               label={character.name}
               image={character.image}
               onClickAction={() => onClickDeleteFavorite(character.name)}

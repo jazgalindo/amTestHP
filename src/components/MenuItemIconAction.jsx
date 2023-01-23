@@ -4,10 +4,10 @@ const MenuItemIconAction = ({ image, label, iconAction, onClickAction }) => {
   return (
     <li className='display'>
       <div className='menu__item'>
-        <p className='menu__item__label'>
+        <div className='menu__item__label'>
           <Avatar src={image} />
           {label}
-        </p>
+        </div>
         <button className='icon-button' onClick={onClickAction}>
           <img src={iconAction} />
         </button>

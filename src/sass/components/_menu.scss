@@ -1,4 +1,6 @@
 .menu {
+    cursor: pointer;
+
     ul {
         list-style: none;
         margin: 0;
@@ -18,7 +20,7 @@
             display: flex;
             border-radius: 10px 10px 0px 0px;
         }
-    
+
         @include desktop {
             top: 0;
             right: 3rem;
@@ -30,14 +32,15 @@
         ul {
             display: none;
             position: absolute;
-            
+
             left: 0;
             background: $color-Blue-Violet;
             padding: 0;
+
             @include mobile {
-                bottom:100%
+                bottom: 100%
             }
-        
+
             @include desktop {
                 top: 100%;
             }
@@ -64,9 +67,9 @@
         }
     }
 
-&__option{
-    height: 36px;
-}
+    &__option {
+        height: 36px;
+    }
 
     &__item {
         display: flex;
@@ -79,7 +82,9 @@
         background: $color-Blue-Violet;
         border-bottom: solid 1px $color-Cornflower-Blue;
         padding: .5rem 1rem;
+
         &__label {
+
             font-size: 18px;
             text-transform: capitalize;
             display: flex;

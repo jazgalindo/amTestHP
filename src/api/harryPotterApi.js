@@ -18,3 +18,9 @@ export const getCharacterTypes = () => {
     .catch((err) => console.error('error', err))
 }
 
+export const postCharacter = (character) => {
+  return harryPotterApi
+    .post('/characters', character)
+    .then((res) => res.data)
+    .catch((err) => console.error('error', err))
+}

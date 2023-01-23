@@ -35,7 +35,7 @@ function HomePage() {
 
   return (
     <Fragment>
-      <Menu/>
+      <Menu />
       <main>
         <img className='logo' src={assets.icons.logo} alt='Harry potter logo' />
         <div className='filters'>
@@ -56,11 +56,8 @@ function HomePage() {
           </div>
         </div>
         <div>
-          {loading ? (
-            <Loader show={true} />
-          ) : (
-            <CharactersList characters={characters} />
-          )}
+          <Loader show={loading} />
+          <CharactersList characters={characters} />
         </div>
       </main>
     </Fragment>
