@@ -5,10 +5,12 @@ Intrucciones para levantar el proyecto seguirlas en el siguiente orden:
 1. npm install
 2. npm run server
 3. npm run dev
+4. npm run test (Para pruebas unitarias)
 
 ¿Qué es lo que más te gustó de tu desarrollo?
     Durante el desarrollo de este proyecto me di la oportunidad de implementar nuevas formas de usar redux (redux/toolkit), ya que mi experiencia laboral ha sido solo con redux. 
     A su vez tambien practique mi uso de sass ya que en mis anteriores empleos usaba solo css o style-components, en otras palabras lo tome como una oportunidad para poner en practica algunas habilidades que no habia tenido oportunidad de utilizar.
+    Hablando de las pruebas unitarias no tengo experiencia laboral sin embargo me di a la tarea de investigar e integrar algunas pruebas en el proyecto, sin duda este proyecto me ha ayudado a mejorar las practicas de programacion en un proyecto mas sostenible.
     Durante el desarrollo lo fui diviendo en pequeñas tareas como usualmente lo hubiera hecho en algun trabajo y cada tarea fue una rama en gitHub para poder mergearla con development y una vez que todo estuviera correcto lo agrega a master.
     En general el desarrollo del proyecto fue agradable 
 
