@@ -1,4 +1,4 @@
-import { useEffect, useId } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { postCharacter } from '../api/harryPotterApi'
 import { setCharacter } from '../slices/dataSlice'
