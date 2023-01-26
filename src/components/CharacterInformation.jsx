@@ -8,9 +8,6 @@ const CharacterInformation = ({
   hairColour,
 }) => {
   
-  
-   
-
   return (
     <div>
       <DataLabel data='Cumpleaños' content={dateOfBirth} />

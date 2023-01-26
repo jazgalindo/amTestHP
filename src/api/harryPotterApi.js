@@ -11,10 +11,16 @@ export const getCharacters = (filter = 'characters') => {
     .catch((err) => console.error('error', err))
 }
 
-export const getFilters = () => {
+export const getCharacterTypes = () => {
   return harryPotterApi
-    .get('/filters')
+    .get('/characterTypes')
     .then((res) => res.data)
     .catch((err) => console.error('error', err))
 }
 
+export const postCharacter = (character) => {
+  return harryPotterApi
+    .post('/characters', character)
+    .then((res) => res.data)
+    .catch((err) => console.error('error', err))
+}
